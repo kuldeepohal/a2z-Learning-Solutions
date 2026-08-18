@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="A2Z Learning Solutions | CBSE Notes for Science, Maths, SST & English">
+<meta name="description" content="A2Z Learning Solutions offers chapter-wise NCERT study material, revision tools, AI doubt solving, and exam-focused guidance for Science, Mathematics, SST, and English across Classes 6 to 10.">
+<meta name="keywords" content="NCERT science notes, NCERT maths notes, NCERT SST notes, NCERT English notes, class 6 science, class 7 science, class 8 science, class 9 science, class 10 science, CBSE study material, NCERT solutions, AI tutor">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#14213D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A2Z Learning Solutions | CBSE Notes & AI Doubt Solver">
+<meta property="og:description" content="CBSE-aligned Science, Maths, SST, and English notes, chapter-wise explanations, AI doubt solver, and revision support for Classes 6 to 10.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="A2Z Learning Solutions">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "A2Z Learning Solutions",
+  "description": "CBSE-aligned learning resources and notes for Science, Mathematics, SST, and English for Class 6 to Class 10 students.",
+  "url": "https://example.com",
+  "areaServed": "IN",
+  "sameAs": [],
+  "keywords": ["NCERT Science notes", "NCERT Maths notes", "NCERT SST notes", "NCERT English notes", "Class 6 Science", "Class 7 Science", "Class 8 Science", "Class 9 Science", "Class 10 Science", "CBSE study material", "AI Tutor"]
+}
+</script>
+<title>A2Z Learning Solutions | CBSE Notes &amp; AI Doubt Solver</title>
+<style>
+  /* Local Overrides for Landing Page Navigation & Hero Header */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(246,245,240,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--font-display); font-size:1.3rem; font-weight:800; color:var(--navy);
+  }
+  .logo .flask{ width:34px; height:34px; flex-shrink:0; }
+  .logo span.accent{ color:var(--teal); }
+
+  nav.primary-nav ul{ display:flex; gap:6px; align-items:center; }
+  nav.primary-nav a{
+    display:inline-block; padding:9px 16px; border-radius:999px;
+    font-weight:600; font-size:0.95rem; color:var(--navy-soft);
+    transition:background .2s ease, color .2s ease;
+  }
+  nav.primary-nav a:hover, nav.primary-nav a:focus-visible{ background:var(--navy); color:#fff; }
+  nav.primary-nav a.cta{ background:var(--coral); color:#fff; }
+  nav.primary-nav a.cta:hover{ background:#e5573f; }
+
+  .hamburger{
+    display:none; flex-direction:column; gap:5px; padding:8px; z-index:101;
+  }
+  .hamburger span{ width:26px; height:3px; background:var(--navy); border-radius:2px; transition:.25s; }
+  .hamburger.open span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity:0; }
+  .hamburger.open span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+  /* Hero Section */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:88px 24px 96px;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(33,176,166,0.16), transparent 45%),
+      radial-gradient(circle at 8% 85%, rgba(255,178,56,0.18), transparent 40%),
+      var(--navy);
+    color:#fff;
+  }
+  .hero-inner{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18);
+    padding:7px 14px; border-radius:999px; color:var(--amber); margin-bottom:22px;
+  }
+  .eyebrow::before{ content:"●"; color:var(--teal); font-size:.6rem; }
+  .hero h1{ font-size:clamp(2.1rem, 4.2vw, 3.4rem); line-height:1.12; margin-bottom:20px; }
+  .hero h1 .hl{ color:var(--teal); }
+  .hero p.lead{ font-size:1.08rem; color:rgba(255,255,255,0.78); max-width:520px; margin-bottom:32px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  /* Orbit visual */
+  .orbit-wrap{ position:relative; width:100%; aspect-ratio:1/1; max-width:380px; margin:0 auto; }
+  .orbit-ring{
+    position:absolute; inset:0; border:1.5px dashed rgba(255,255,255,0.22); border-radius:50%;
+    will-change:transform; animation:spin 30s linear infinite;
+  }
+  .orbit-ring.r2{ inset:14%; animation-duration:22s; animation-direction:reverse; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .nucleus{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:108px; height:108px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #37d6c9, var(--teal));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 10px rgba(33,176,166,0.12), 0 20px 40px -10px rgba(0,0,0,0.5);
+  }
+  .nucleus svg{ width:52px; height:52px; }
+  .orbit-node{
+    position:absolute; width:52px; height:52px; border-radius:50%;
+    background:var(--navy-soft); border:2px solid rgba(255,255,255,0.25);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .orbit-node svg{ width:26px; height:26px; }
+  .orbit-ring .orbit-node{ top:-26px; left:calc(50% - 26px); }
+  .orbit-ring.r2 .orbit-node{ background:var(--amber); border-color:var(--amber); }
+  .orbit-ring.r2 .orbit-node svg{ width:24px; height:24px; }
+
+  /* Element Grid Tiles */
+  .classes{ background:var(--paper); padding:76px 0; }
+  .section-head{ max-width:640px; margin:0 auto 44px; text-align:center; }
+  .section-head .tag{
+    font-family:var(--font-mono); font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--teal); font-weight:700; display:block; margin-bottom:10px;
+  }
+  .section-head h2{ font-size:clamp(1.6rem, 3vw, 2.2rem); color:var(--navy); margin-bottom:12px; }
+  .section-head p{ color:var(--ink-soft); font-size:1.02rem; }
+
+  .trust-row{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:22px;
+  }
+  .trust-card{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+    border-radius:16px; padding:16px 18px;
+  }
+  .trust-card .kicker{
+    font-family:var(--font-mono); font-size:0.72rem; letter-spacing:1.3px; text-transform:uppercase;
+    color:var(--amber); margin-bottom:8px;
+  }
+  .trust-card h3{ font-size:1.05rem; margin-bottom:6px; color:#fff; }
+  .trust-card p{ font-size:0.92rem; color:rgba(255,255,255,0.74); }
+
+  .feature-band{ padding:34px 0 10px; background:var(--paper); }
+  .feature-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+  .feature-card{
+    background:var(--paper-card); border:1px solid var(--line); border-radius:16px;
+    padding:18px; box-shadow:var(--shadow);
+  }
+  .feature-card .icon{
+    width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:rgba(33,176,166,0.12); color:var(--teal); font-weight:800; margin-bottom:12px;
+  }
+  .feature-card h3{ font-size:1.05rem; color:var(--navy); margin-bottom:8px; }
+  .feature-card p{ font-size:0.92rem; color:var(--ink-soft); }
+
+  .affiliate-section{ padding:70px 0; background:linear-gradient(180deg, #f9f8f4 0%, #f3f7f6 100%); }
+  .affiliate-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+  .affiliate-card{
+    background:var(--paper-card); border:1px solid var(--line); border-radius:18px; padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .affiliate-card .pill{
+    display:inline-flex; padding:6px 10px; border-radius:999px; background:rgba(255,178,56,0.14);
+    color:#8A5A00; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:1.2px; text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .affiliate-card h3{ color:var(--navy); margin-bottom:8px; font-size:1.15rem; }
+  .affiliate-card p{ color:var(--ink-soft); font-size:0.92rem; margin-bottom:14px; }
+  .affiliate-card ul{ list-style:none; display:grid; gap:8px; margin-bottom:14px; }
+  .affiliate-card li{ color:var(--ink); font-size:0.9rem; }
+  .disclosure{ margin-top:12px; font-size:0.8rem; color:var(--ink-soft); }
+
+  .element-grid{ display:grid; grid-template-columns:repeat(5, 1fr); gap:18px; }
+  .element-tile{
+    position:relative; background:var(--paper-card); border:2px solid var(--line);
+    border-radius:14px; padding:18px 14px 20px; min-height:170px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    overflow:hidden;
+  }
+  .element-tile:hover, .element-tile:focus-visible{
+    transform:translateY(-8px); box-shadow:var(--shadow); border-color:var(--tile-color, var(--teal));
+  }
+  .element-tile .num{ font-family:var(--font-mono); font-size:0.85rem; color:var(--ink-soft); font-weight:700; }
+  .element-tile .symbol{ font-family:var(--font-display); font-size:2.4rem; font-weight:800; color:var(--tile-color, var(--teal)); line-height:1; }
+  .element-tile .name{ font-weight:700; font-size:0.95rem; color:var(--navy); }
+  .element-tile .meta{ font-size:0.78rem; color:var(--ink-soft); }
+  .element-tile .detail{ margin-top:8px; font-size:0.78rem; color:var(--ink-soft); line-height:1.45; }
+  .element-tile .go{ font-size:0.82rem; font-weight:700; color:var(--tile-color, var(--teal)); display:flex; align-items:center; gap:4px; margin-top:10px; }
+
+  /* Categories */
+  .categories{ background:var(--navy); padding:76px 0; }
+  .categories .section-head h2{ color:#fff; }
+  .categories .section-head p{ color:rgba(255,255,255,0.68); }
+  .categories .section-head .tag{ color:var(--amber); }
+  .cat-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; }
+  .cat-card{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius); padding:26px 22px; color:#fff; transition:transform .2s ease, background .2s ease;
+  }
+  .cat-card:hover{ transform:translateY(-6px); background:rgba(255,255,255,0.09); }
+  .cat-icon{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; background:var(--cat-color, var(--teal)); }
+  .cat-icon svg{ width:28px; height:28px; color:var(--navy); }
+
+  /* Strip Stats */
+  .strip{ background:var(--paper-card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:40px 0; }
+  .strip-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+  .strip-item .big{ font-family:var(--font-display); font-size:2rem; color:var(--coral); font-weight:800; }
+  .strip-item .lbl{ font-size:0.88rem; color:var(--ink-soft); margin-top:6px; }
+
+  /* Responsive */
+  @media (max-width: 980px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .element-grid{ grid-template-columns:repeat(3, 1fr); }
+    .cat-grid{ grid-template-columns:repeat(2, 1fr); }
+    .trust-row, .feature-grid, .affiliate-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 640px){
+    .element-grid{ grid-template-columns:repeat(2, 1fr); }
+    .cat-grid{ grid-template-columns:1fr; }
+    .strip-grid{ grid-template-columns:1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav-wrap container">
+    <a href="#top" class="logo">
+      <svg class="flask" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6h10v10.5l8.5 16.2c1.7 3.2-.6 7.3-4.2 7.3H14.7c-3.6 0-5.9-4.1-4.2-7.3L19 16.5V6z" stroke="#21B0A6" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="M17 30h14" stroke="#FFB238" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="20" cy="35" r="1.6" fill="#FF6B57"/>
+        <circle cx="26" cy="37" r="1.2" fill="#21B0A6"/>
+      </svg>
+      A2Z <span class="accent">Learning Solutions</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <nav class="primary-nav" id="primaryNav">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#categories">Subjects</a></li>
+        <li><a href="subscription.html">Pricing &amp; Plans</a></li>
+        <li><a href="subscription.html" class="cta">Upgrade to Pro Pass</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">NCERT · CBSE Aligned · Class 6–10 · AI Powered</span>
+      <h1>CBSE Notes for <span class="hl">Science, Maths, SST &amp; English</span></h1>
+      <p class="lead">Get chapter-wise notes, instant doubt solving, and revision tools built for CBSE Class 6 to 10 students. Start free, upgrade when you need unlimited help.</p>
+      <div class="hero-actions">
+        <a href="#classes" class="btn btn-primary">Choose Your Class ↓</a>
+        <a href="subscription.html" class="btn btn-secondary">Unlock Pro Pass</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-card">
+          <div class="kicker">Free First</div>
+          <h3>Learn before you pay</h3>
+          <p>Try notes, summaries, and 3 AI prompts a day before upgrading.</p>
+        </div>
+        <div class="trust-card">
+          <div class="kicker">Exam Focus</div>
+          <h3>Built for revision</h3>
+          <p>Short notes, formulas, diagrams, and chapter-wise practice are front and center.</p>
+        </div>
+        <div class="trust-card">
+          <div class="kicker">Fast Upgrade</div>
+          <h3>Clear paid path</h3>
+          <p>Paid plans unlock printable PDFs, more AI help, and deeper study packs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="orbit-wrap" aria-hidden="true">
+      <div class="orbit-ring">
+        <div class="orbit-node">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="#14213D" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="#14213D"/></svg>
+        </div>
+      </div>
+      <div class="orbit-ring r2">
+        <div class="orbit-node">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18M4 9h16M4 15h16" stroke="#14213D" stroke-width="1.6"/><circle cx="12" cy="12" r="9" stroke="#14213D" stroke-width="1.6"/></svg>
+        </div>
+      </div>
+      <div class="nucleus">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M19 6h10v10.5l8.5 16.2c1.7 3.2-.6 7.3-4.2 7.3H14.7c-3.6 0-5.9-4.1-4.2-7.3L19 16.5V6z" stroke="#14213D" stroke-width="2.6" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURE BAND ================= -->
+<section class="feature-band">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:28px;">
+      <span class="tag">What students get</span>
+      <h2>Everything in one place, so studying feels simpler</h2>
+      <p>Use free resources to build trust, then move into the paid path when you need printable notes and deeper practice.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">01</div>
+        <h3>Class-wise notes</h3>
+        <p>Each class has focused science notes so students land on the exact level they need.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">02</div>
+        <h3>AI doubt solving</h3>
+        <p>Use the tutor for short questions, revision help, and quick explanations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">03</div>
+        <h3>Printable packs</h3>
+        <p>Upgrade for PDFs, formula sheets, diagrams, and test-ready revision bundles.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">04</div>
+        <h3>Recommended tools</h3>
+        <p>Discover the best companion books and study tools without leaving the lesson flow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLASSES ================= -->
+<section class="classes" id="classes">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Choose your grade</span>
+      <h2>Five classes. One shared syllabus story.</h2>
+      <p>Select your class to explore NCERT chapter notes, formulas, and study tips.</p>
+    </div>
+
+    <div class="element-grid">
+      <a href="notes/class6.html" target="_blank" class="element-tile" style="--tile-color:#21B0A6">
+        <span class="num">06</span>
+        <div>
+          <div class="symbol">C6</div>
+          <div class="name">Class 6</div>
+          <div class="meta">Food, Materials, Living World</div>
+          <p class="detail">Build strong foundational science with simple examples from everyday life.</p>
+        </div>
+        <span class="go">Explore Notes →</span>
+      </a>
+      <a href="notes/class7.html" target="_blank" class="element-tile" style="--tile-color:#FFB238">
+        <span class="num">07</span>
+        <div>
+          <div class="symbol">C7</div>
+          <div class="name">Class 7</div>
+          <div class="meta">Nutrition, Heat, Acids &amp; Bases</div>
+          <p class="detail">Understand how living systems work and how everyday substances behave.</p>
+        </div>
+        <span class="go">Explore Notes →</span>
+      </a>
+      <a href="notes/class8.html" target="_blank" class="element-tile" style="--tile-color:#FF6B57">
+        <span class="num">08</span>
+        <div>
+          <div class="symbol">C8</div>
+          <div class="name">Class 8</div>
+          <div class="meta">Force, Friction, Cell Structure</div>
+          <p class="detail">Dive deeper into biology and physics with clear diagrams and concept checks.</p>
+        </div>
+        <span class="go">Explore Notes →</span>
+      </a>
+      <a href="notes/class9.html" target="_blank" class="element-tile" style="--tile-color:#5A6ACF">
+        <span class="num">09</span>
+        <div>
+          <div class="symbol">C9</div>
+          <div class="name">Class 9</div>
+          <div class="meta">Matter, Motion, Tissues</div>
+          <p class="detail">Prepare for higher classes with a strong grasp of matter, motion, and life processes.</p>
+        </div>
+        <span class="go">Explore Notes →</span>
+      </a>
+      <a href="notes/class10.html" target="_blank" class="element-tile" style="--tile-color:#14213D">
+        <span class="num">10</span>
+        <div>
+          <div class="symbol">C10</div>
+          <div class="name">Class 10</div>
+          <div class="meta">Reactions, Electricity, Genetics</div>
+          <p class="detail">Review exam-ready science concepts with concise notes and key study tips.</p>
+        </div>
+        <span class="go">Explore Notes →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECOMMENDED RESOURCES ================= -->
+<section class="affiliate-section" id="resources">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Recommended resources</span>
+      <h2>Helpful study tools for Science students</h2>
+      <p>These are natural add-ons for parents and students who want better revision habits, cleaner notes, and faster practice.</p>
+    </div>
+
+    <div class="affiliate-grid">
+      <article class="affiliate-card">
+        <div class="pill">Best for Class 6-7</div>
+        <h3>Starter Science Notebook Kit</h3>
+        <p>A simple bundle for younger students who need to build a neat revision system.</p>
+        <ul>
+          <li>Highlighters and index tabs</li>
+          <li>Ruled + diagram notebook</li>
+          <li>Sticky notes for definitions</li>
+        </ul>
+        <a href="subscription.html" class="btn btn-outline" style="width:100%;">See Study Bundle</a>
+      </article>
+
+      <article class="affiliate-card">
+        <div class="pill">Best for Class 8-9</div>
+        <h3>Science Practice Workbook</h3>
+        <p>Ideal for students who need more chapter drills, objective questions, and short answers.</p>
+        <ul>
+          <li>Chapter-by-chapter questions</li>
+          <li>Formula revision pages</li>
+          <li>Quick self-test format</li>
+        </ul>
+        <a href="subscription.html" class="btn btn-outline" style="width:100%;">Explore Workbook</a>
+      </article>
+
+      <article class="affiliate-card">
+        <div class="pill">Best for Class 10</div>
+        <h3>Board Exam Revision Pack</h3>
+        <p>For parents and students who want a cleaner path from notes to exam prep and mock practice.</p>
+        <ul>
+          <li>Diagram and formula sheets</li>
+          <li>Previous-year-style practice</li>
+          <li>Last-minute revision support</li>
+        </ul>
+        <a href="subscription.html" class="btn btn-outline" style="width:100%;">View Revision Pack</a>
+      </article>
+    </div>
+    <div class="disclosure">Affiliate disclosure: some recommended study products may be affiliate links in the future. We only suggest tools that match the learning needs of CBSE Science students.</div>
+  </div>
+</section>
+
+<!-- ================= SUBJECTS ================= -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Study by subject</span>
+      <h2>Core subjects for every grade</h2>
+      <p>Jump straight into the subject you're revising today, from science concepts to language and social studies revision.</p>
+    </div>
+
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-icon" style="--cat-color:#21B0A6">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="#14213D"/><ellipse cx="12" cy="12" rx="9" ry="4" stroke="#14213D" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Physics</h3>
+        <p>Motion, force, light, electricity and the rules that govern the physical universe.</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-icon" style="--cat-color:#FFB238">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6.5L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9.5V3" stroke="#14213D" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Chemistry</h3>
+        <p>Reactions, elements, acids, bases and the chemical properties of matter.</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-icon" style="--cat-color:#FF6B57">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-5-3-8-7-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 4-3 8-8 11z" stroke="#14213D" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Biology</h3>
+        <p>Cells, tissues, human anatomy, plants and living ecosystem dynamics.</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-icon" style="--cat-color:#5A6ACF">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#14213D" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Mathematics</h3>
+        <p>Arithmetic, algebra, geometry, mensuration and daily-life problem solving.</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-icon" style="--cat-color:#8B5CF6">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M6 6v12m12-12v12M4 18h16" stroke="#14213D" stroke-width="1.7"/></svg>
+        </div>
+        <h3>Social Studies</h3>
+        <p>History, geography, civics and practical SST revision notes for each class level.</p>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-icon" style="--cat-color:#FF8A5B">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M5 12h10M5 17h12" stroke="#14213D" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>English</h3>
+        <p>Grammar, literature, writing practice and reading comprehension made simpler.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRIP ================= -->
+<section class="strip">
+  <div class="container strip-grid">
+    <div class="strip-item">
+      <div class="big">5</div>
+      <div class="lbl">Classes covered (6–10)</div>
+    </div>
+    <div class="strip-item">
+      <div class="big">150+</div>
+      <div class="lbl">NCERT chapters explained</div>
+    </div>
+    <div class="strip-item">
+      <div class="big">AI Tutor</div>
+      <div class="lbl">Instant doubt solving across subjects</div>
+    </div>
+    <div class="strip-item">
+      <div class="big">100%</div>
+      <div class="lbl">CBSE syllabus aligned</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer style="background:var(--navy); color:rgba(255,255,255,0.7); padding:52px 0 26px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; margin-bottom:36px;">
+      <div>
+        <a href="#top" class="logo" style="color:#fff; margin-bottom:12px;">
+          A2Z Learning Solutions
+        </a>
+        <p style="font-size:0.9rem; max-width:280px;">NCERT study material and AI Doubt Solver for CBSE Class 6 to 10 students across Science, Maths, SST, and English.</p>
+      </div>
+
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; margin-bottom:14px;">Classes</h4>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="notes/class6.html">Class 6 Notes</a></li>
+          <li style="margin-bottom:8px;"><a href="notes/class7.html">Class 7 Notes</a></li>
+          <li style="margin-bottom:8px;"><a href="notes/class8.html">Class 8 Notes</a></li>
+          <li style="margin-bottom:8px;"><a href="notes/class9.html">Class 9 Notes</a></li>
+          <li style="margin-bottom:8px;"><a href="notes/class10.html">Class 10 Notes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; margin-bottom:14px;">Subscriptions</h4>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="subscription.html">Free Starter Plan</a></li>
+          <li style="margin-bottom:8px;"><a href="subscription.html">Class Pro Pass (₹499/yr)</a></li>
+          <li style="margin-bottom:8px;"><a href="subscription.html">All-Access Pass (₹1,499/yr)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color:#fff; font-size:0.95rem; margin-bottom:14px;">Legal & Support</h4>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="contact.html">Contact Us</a></li>
+          <li style="margin-bottom:8px;"><a href="terms.html">Terms & Conditions</a></li>
+          <li style="margin-bottom:8px;"><a href="disclaimer.html">Disclaimer</a></li>
+          <li style="margin-bottom:8px;"><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:20px; font-size:0.82rem;">
+      <span>© 2026 A2Z Learning Solutions. Built for CBSE students.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= AI SCIENCE DOUBT SOLVER WIDGET ================= -->
+  <div class="ai-widget-trigger" id="aiWidgetTrigger">
+  <div class="ai-widget-icon">⚡</div>
+  <div>
+    <div style="font-weight:800; font-size:0.92rem; line-height:1.2">Ask AI Tutor</div>
+    <div style="font-size:0.75rem; color:var(--amber)">Instant Doubt Solver</div>
+  </div>
+  <span class="ai-badge">NEW</span>
+</div>
+
+<div class="ai-chat-window" id="aiChatWindow">
+  <div class="ai-chat-header">
+    <div class="ai-chat-title">
+      <span style="color:var(--teal)">⚡</span> A2Z AI Tutor
+    </div>
+    <button class="ai-close-btn" id="aiCloseBtn">✕</button>
+  </div>
+  <div class="ai-limit-bar">
+    <span>Free Prompts Remaining:</span>
+    <span id="aiLimitCount" style="font-weight:800; color:var(--coral)">3</span>
+  </div>
+  <div class="ai-chat-messages" id="aiMessages">
+    <div class="chat-bubble bot">
+      👋 Hi! I am your <strong>A2Z AI Tutor</strong>.<br><br>
+      Ask me any doubt from CBSE Class 6 to 10 Science, Maths, SST, or English (e.g. <em>"Explain Ohm's Law"</em> or <em>"Write a paragraph on pollution"</em>)!
+    </div>
+  </div>
+  <div class="ai-chat-input-area">
+    <input type="text" id="aiInput" placeholder="Type your science question...">
+    <button class="btn btn-primary" id="aiSendBtn" style="padding:10px 16px;">Ask</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('primaryNav');
+  const backdrop = document.getElementById('navBackdrop');
+
+  function toggleNav(){
+    const isOpen = nav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+  }
+  hamburger?.addEventListener('click', toggleNav);
+  backdrop?.addEventListener('click', toggleNav);
+</script>
+
+<!-- Floating Ms Shalini Ma'am Widget -->
+<div class="floating-teacher">
+  <div class="floating-teacher-icon">👩‍🏫</div>
+  <div class="floating-teacher-tooltip">Ms Shalini Ma'am - Ask AI</div>
+</div>
+</body>
+</html>

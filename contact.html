@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="Contact Us | A2Z Learning Solutions">
+<meta name="description" content="Get in touch with A2Z Learning Solutions. Email, phone, WhatsApp support for NCERT Science notes and AI Doubt Solver.">
+<meta name="keywords" content="contact a2z solutions, email support, phone support, whatsapp support">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#14213D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Contact Us | A2Z Learning Solutions</title>
+<style>
+  /* Contact Page Specific Styles */
+  .contact-hero {
+    background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+    color: #ffffff;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .contact-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  .contact-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 60px auto;
+    max-width: 1180px;
+    padding: 0 24px;
+  }
+
+  .contact-info-box {
+    background: var(--paper-card);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-info-box h2 {
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 30px;
+  }
+
+  .contact-item {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--teal);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item-content h3 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 5px;
+  }
+
+  .contact-item-content p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .contact-item-content a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .contact-item-content a:hover {
+    color: var(--teal-hover);
+  }
+
+  .contact-form-box {
+    background: var(--paper-card);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-form-box h2 {
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--line);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--coral);
+    color: #ffffff;
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background: var(--coral-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -8px rgba(255, 107, 87, 0.6);
+  }
+
+  /* Comments Section */
+  .comments-section {
+    margin-top: 60px;
+    max-width: 1180px;
+    padding: 0 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .comments-section h2 {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .add-comment-box {
+    background: var(--paper-card);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+  }
+
+  .add-comment-box h3 {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .comment-item {
+    background: var(--paper-card);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--teal);
+  }
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+  }
+
+  .comment-author {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 1rem;
+  }
+
+  .comment-date {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  .comment-text {
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .no-comments {
+    text-align: center;
+    color: var(--ink-soft);
+    padding: 40px 20px;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .contact-hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .contact-info-box,
+    .contact-form-box {
+      padding: 30px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Back to Home Button (Top Right) -->
+<a href="index.html" class="btn btn-outline" style="position: fixed; top: 90px; right: 24px; z-index: 90; display: flex; align-items: center; gap: 8px; padding: 10px 16px;">
+  <span>←</span> Home
+</a>
+
+<!-- Header/Navigation -->
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span>🧪</span>
+      <span>A2Z Solutions</span>
+    </a>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="doubt-solver.html">Doubt Solver</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="subscription.html">Subscription</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Contact Hero -->
+<section class="contact-hero">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p>Have questions about our NCERT Science notes or AI Doubt Solver? We're here to help!</p>
+  </div>
+</section>
+
+<!-- Main Contact Content -->
+<section class="contact-container">
+  <!-- Contact Information -->
+  <div class="contact-info-box">
+    <h2>Contact Information</h2>
+
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-item-content">
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:helpata2zsolutions@gmail.com">helpata2zsolutions@gmail.com</a>
+        </p>
+        <p style="font-size: 0.85rem; color: var(--ink-soft); margin-top: 5px;">We'll respond within 24 hours</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div class="contact-item-content">
+        <h3>WhatsApp & Telegram</h3>
+        <p>
+          <a href="https://wa.me/919503348051" target="_blank">+91 9503348051</a>
+        </p>
+        <p style="font-size: 0.85rem; color: var(--ink-soft); margin-top: 5px;">Quick support available on WhatsApp & Telegram</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div class="contact-item-content">
+        <h3>Address</h3>
+        <p>A2Z Solutions<br>Pakharsangavi<br>Latur, India</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon">⏰</div>
+      <div class="contact-item-content">
+        <h3>Business Hours</h3>
+        <p>Monday - Saturday<br>9:00 AM - 6:00 PM IST<br>Sunday: Closed</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="contact-form-box">
+    <h2>Send us a Message</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject *</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Comments Section -->
+<section class="comments-section">
+  <h2>Community Feedback & Comments</h2>
+
+  <!-- Add Comment Form -->
+  <div class="add-comment-box">
+    <h3>Leave a Comment</h3>
+    <form id="commentForm">
+      <div class="form-group">
+        <label for="commentName">Your Name *</label>
+        <input type="text" id="commentName" name="commentName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="commentEmail">Your Email *</label>
+        <input type="email" id="commentEmail" name="commentEmail" required>
+      </div>
+
+      <div class="form-group">
+        <label for="commentText">Your Comment *</label>
+        <textarea id="commentText" name="commentText" required placeholder="Share your feedback, suggestions, or questions..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Post Comment</button>
+    </form>
+  </div>
+
+  <!-- Comments Display -->
+  <div id="commentsContainer">
+    <div class="comments-list" id="commentsList">
+      <div class="no-comments">No comments yet. Be the first to share your thoughts!</div>
+    </div>
+  </div>
+</section>
+
+<!-- Back to Home Button (Bottom) -->
+<div style="max-width: 1180px; margin: 40px auto 0; padding: 0 24px;">
+  <a href="index.html" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 8px;">
+    <span>←</span> Back to Home
+  </a>
+</div>
+
+<!-- Footer -->
+<footer style="background: var(--navy); color: #ffffff; padding: 40px 24px; text-align: center; margin-top: 60px;">
+  <div class="container">
+    <p style="margin-bottom: 15px;">© 2024 A2Z Learning Solutions. All rights reserved.</p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 0.9rem;">
+      <a href="terms.html" style="color: #ffffff; text-decoration: underline;">Terms & Conditions</a>
+      <a href="disclaimer.html" style="color: #ffffff; text-decoration: underline;">Disclaimer</a>
+      <a href="cookie-policy.html" style="color: #ffffff; text-decoration: underline;">Cookie Policy</a>
+      <a href="contact.html" style="color: #ffffff; text-decoration: underline;">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Contact Form Handler
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+
+    // Show success message
+    alert('Thank you for your message! We will get back to you soon at ' + email);
+    this.reset();
+  });
+
+  // Comment Form Handler
+  document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const commentName = document.getElementById('commentName').value;
+    const commentEmail = document.getElementById('commentEmail').value;
+    const commentText = document.getElementById('commentText').value;
+
+    // Get existing comments from localStorage
+    let comments = JSON.parse(localStorage.getItem('siteComments')) || [];
+
+    // Add new comment
+    const newComment = {
+      name: commentName,
+      email: commentEmail,
+      text: commentText,
+      date: new Date().toLocaleDateString('en-IN', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    };
+
+    comments.unshift(newComment);
+    localStorage.setItem('siteComments', JSON.stringify(comments));
+
+    // Clear form
+    this.reset();
+
+    // Refresh comments display
+    displayComments();
+  });
+
+  // Display Comments
+  function displayComments() {
+    const comments = JSON.parse(localStorage.getItem('siteComments')) || [];
+    const commentsList = document.getElementById('commentsList');
+
+    if (comments.length === 0) {
+      commentsList.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your thoughts!</div>';
+      return;
+    }
+
+    commentsList.innerHTML = comments.map((comment, index) => `
+      <div class="comment-item">
+        <div class="comment-header">
+          <div class="comment-author">${escapeHtml(comment.name)}</div>
+          <div class="comment-date">${comment.date}</div>
+        </div>
+        <div class="comment-text">${escapeHtml(comment.text)}</div>
+      </div>
+    `).join('');
+  }
+
+  // Helper function to prevent XSS
+  function escapeHtml(text) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
+  }
+
+  // Load comments on page load
+  window.addEventListener('DOMContentLoaded', displayComments);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Subscribe to A2Z Learning Solutions - Choose from Free, Class Pro Pass (₹499/yr), and All-Access Pass for CBSE Science study material and AI Doubt Solver.">
+  <meta name="robots" content="index, follow">
+  <title>Pricing &amp; Subscriptions | A2Z Learning Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sub-hero {
+      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+      color: #ffffff;
+      padding: 50px 24px;
+      text-align: center;
+    }
+    .sub-hero h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: #ffffff; margin-bottom: 12px; }
+    .sub-hero p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 24px; font-size: 1.05rem; }
+    
+    .grade-bar {
+      background: rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      padding: 6px;
+      border-radius: 999px;
+      gap: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .grade-bar label {
+      font-weight: 700;
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .grade-bar input[type="radio"] { display: none; }
+    .grade-bar input[type="radio"]:checked + label {
+      background: var(--teal);
+      color: var(--navy);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header style="background:#fff; border-bottom:1px solid var(--line); padding:16px 24px;">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="index.html" class="btn btn-outline" style="padding:6px 14px; font-size:0.85rem;">← Back to Home</a>
+      <div style="font-family:var(--font-display); font-weight:800; font-size:1.25rem; color:var(--navy);">
+        A2Z <span style="color:var(--teal)">Learning Solutions</span>
+      </div>
+      <a href="index.html#classes" class="btn btn-secondary" style="padding:8px 16px; font-size:0.88rem;">Explore Notes</a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <div class="sub-hero">
+    <div class="container">
+      <span style="font-family:var(--font-mono); text-transform:uppercase; letter-spacing:1.5px; font-size:0.8rem; color:var(--amber); font-weight:700;">Simple, Transparent Pricing</span>
+      <h1>Unlock Board Exam Excellence</h1>
+      <p>Select your class and pick a plan to access complete printable PDF notes, formula cheat-sheets, and instant AI Science Doubt solving.</p>
+
+      <!-- Grade Selector -->
+      <div style="margin-top:20px;">
+        <span style="color:rgba(255,255,255,0.7); font-size:0.85rem; display:block; margin-bottom:8px;">Select Your Target Class:</span>
+        <div class="grade-bar">
+          <input type="radio" name="selGrade" id="g6" value="6">
+          <label for="g6">Class 6</label>
+
+          <input type="radio" name="selGrade" id="g7" value="7">
+          <label for="g7">Class 7</label>
+
+          <input type="radio" name="selGrade" id="g8" value="8">
+          <label for="g8">Class 8</label>
+
+          <input type="radio" name="selGrade" id="g9" value="9">
+          <label for="g9">Class 9</label>
+
+          <input type="radio" name="selGrade" id="g10" value="10" checked>
+          <label for="g10">Class 10</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Cards Section -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-grid">
+
+        <!-- Tier 1: Free Starter -->
+        <div class="pricing-card">
+          <div class="pricing-title">Free Starter</div>
+          <div class="pricing-subtitle">Basic online access for daily reading</div>
+          
+          <div class="pricing-amount">
+            <span class="currency">₹</span>
+            <span class="val">0</span>
+            <span class="period">/ forever</span>
+          </div>
+
+          <ul class="pricing-features">
+            <li>Online Chapter Summaries</li>
+            <li>Basic NCERT Solutions View</li>
+            <li>3 AI Science Tutor prompts/day</li>
+            <li class="disabled">Printable Chapter PDFs</li>
+            <li class="disabled">10-Year Solved CBSE Papers</li>
+            <li class="disabled">Unlimited AI Doubts</li>
+          </ul>
+
+          <a href="index.html#classes" class="btn btn-outline" style="width:100%;">Current Plan</a>
+        </div>
+
+        <!-- Tier 2: Class Pro Pass (Featured) -->
+        <div class="pricing-card featured">
+          <span class="popular-badge">Most Popular</span>
+          <div class="pricing-title" style="color:var(--coral);">Class Pro Pass</div>
+          <div class="pricing-subtitle">Complete 1-Year access for your selected class</div>
+          
+          <div class="pricing-amount">
+            <span class="currency">₹</span>
+            <span class="val">499</span>
+            <span class="period">/ year</span>
+            <span class="strikethrough">₹999</span>
+          </div>
+
+          <ul class="pricing-features">
+            <li>Full Printable Chapter PDFs</li>
+            <li>Formula &amp; Diagram Handbooks</li>
+            <li>10-Year Solved CBSE Board Papers</li>
+            <li>30 AI Science Tutor prompts/day</li>
+            <li>Chapter-wise Revision Quizzes</li>
+            <li class="disabled">All Classes 6–10 Unlocked</li>
+          </ul>
+
+          <button class="btn btn-primary" style="width:100%;" onclick="openCheckout('pro_pass', 'Class Pro Pass', 499)">Unlock Pro Pass (₹499) →</button>
+        </div>
+
+        <!-- Tier 3: All-Access Master -->
+        <div class="pricing-card">
+          <div class="pricing-title" style="color:var(--teal);">All-Access Master</div>
+          <div class="pricing-subtitle">Full access for Classes 6 to 10 + Unlimited AI</div>
+          
+          <div class="pricing-amount">
+            <span class="currency">₹</span>
+            <span class="val">1,499</span>
+            <span class="period">/ year</span>
+            <span class="strikethrough">₹3,999</span>
+          </div>
+
+          <ul class="pricing-features">
+            <li>Everything in Class Pro Pass</li>
+            <li><strong>ALL Classes 6, 7, 8, 9 &amp; 10 Unlocked</strong></li>
+            <li><strong>Unlimited AI Science Doubts</strong></li>
+            <li>Live Mock Test Generator</li>
+            <li>Priority WhatsApp Tutor Support</li>
+            <li>Parent Progress Reports</li>
+          </ul>
+
+          <button class="btn btn-secondary" style="width:100%;" onclick="openCheckout('master_pass', 'All-Access Master', 1499)">Unlock All-Access (₹1,499) →</button>
+        </div>
+
+      </div>
+
+      <!-- Money Back Guarantee Badge -->
+      <div style="margin-top:40px; text-align:center; padding:20px; background:#fff; border-radius:14px; border:1px solid var(--line);">
+        <div style="font-weight:700; font-size:1.1rem; color:var(--navy); margin-bottom:4px;">🛡️ 7-Day 100% Money Back Guarantee</div>
+        <div style="color:var(--ink-soft); font-size:0.9rem;">Not satisfied with your subscription? Get a full refund within 7 days, no questions asked.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAYMENT CHECKOUT MODAL ================= -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="checkout-modal">
+      <div class="checkout-header" style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div style="font-size:0.75rem; text-transform:uppercase; color:var(--teal); font-weight:700;">Instant Payment Checkout</div>
+          <h3 id="modalPlanTitle">Class Pro Pass</h3>
+        </div>
+        <button id="modalClose" style="font-size:1.5rem; color:var(--ink-soft);">✕</button>
+      </div>
+
+      <div style="background:#F9F8F4; padding:12px 16px; border-radius:10px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-weight:600; color:var(--navy);">Total Amount Payable:</span>
+        <span id="modalPlanAmount" style="font-size:1.5rem; font-weight:800; color:var(--coral); font-family:var(--font-display);">₹499</span>
+      </div>
+
+      <form id="checkoutForm" onsubmit="return false;">
+        <div style="margin-bottom:12px;">
+          <label style="font-size:0.85rem; font-weight:600; color:var(--ink-soft); display:block; margin-bottom:4px;">Student / Parent Full Name</label>
+          <input type="text" id="custName" placeholder="e.g. Rahul Sharma" required style="width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line);">
+        </div>
+
+        <div style="margin-bottom:12px;">
+          <label style="font-size:0.85rem; font-weight:600; color:var(--ink-soft); display:block; margin-bottom:4px;">Email Address for Receipt &amp; Access</label>
+          <input type="email" id="custEmail" placeholder="you@example.com" required style="width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line);">
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label style="font-size:0.85rem; font-weight:600; color:var(--ink-soft); display:block; margin-bottom:4px;">Confirm Class</label>
+          <select id="custGrade" style="width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line);">
+            <option value="6">Class 6 Science</option>
+            <option value="7">Class 7 Science</option>
+            <option value="8">Class 8 Science</option>
+            <option value="9">Class 9 Science</option>
+            <option value="10" selected>Class 10 Science</option>
+          </select>
+        </div>
+
+        <div style="font-size:0.85rem; font-weight:600; color:var(--navy); margin-bottom:6px;">Select Payment Method:</div>
+        <div class="payment-options">
+          <div class="pay-opt active">⚡ UPI (GPay / PhonePe)</div>
+          <div class="pay-opt">💳 Debit / Credit Card</div>
+          <div class="pay-opt">📱 Paytm Wallet</div>
+          <div class="pay-opt">🏦 Netbanking</div>
+        </div>
+
+        <button id="confirmPayBtn" class="btn btn-primary" style="width:100%; margin-top:12px; padding:14px;">Pay Now &amp; Unlock Instant Access</button>
+        <div id="checkoutMessage" style="margin-top:10px; font-size:0.9rem; text-align:center;"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Sync selected grade radio button to modal dropdown
+    document.querySelectorAll('input[name="selGrade"]').forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        const gradeSelect = document.getElementById('custGrade');
+        if (gradeSelect) gradeSelect.value = e.target.value;
+      });
+    });
+  </script>
+
+<!-- Floating Ms Shalini Ma'am Widget -->
+<div class="floating-teacher">
+  <div class="floating-teacher-icon">👩‍🏫</div>
+  <div class="floating-teacher-tooltip">Ms Shalini Ma'am - Ask AI</div>
+</div>
+</body>
+</html>
