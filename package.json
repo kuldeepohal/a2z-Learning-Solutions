@@ -1,6 +1,6 @@
 {
   "name": "a2z-learning-solutions",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "private": true,
   "description": "A2Z Learning Solutions — CBSE/NCERT learning platform",
   "scripts": {
@@ -8,10 +8,14 @@
     "dev": "vercel dev",
     "test": "node --check api/index.js"
   },
-  "engines": { "node": "20.x" },
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "nodemailer": "^7.0.0",
     "razorpay": "^2.9.5"
   },
-  "devDependencies": { "vercel": "latest" }
+  "devDependencies": {
+    "vercel": "latest"
+  }
 }
