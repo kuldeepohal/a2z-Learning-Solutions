@@ -2,6 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.js": {
+      "runtime": "nodejs20.x",
       "maxDuration": 30
     }
   },
@@ -13,7 +14,8 @@
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
       ]
     }
   ]
