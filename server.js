@@ -127,7 +127,7 @@ Your role is to provide clear, concise, and exam-focused answers across Science,
     } catch (apiErr) {
       console.error('OpenAI API Error:', apiErr.response?.data || apiErr.message);
       // Fallback to local AI Science response
-      const answer = generateScienceAnswer(prompt);
+      const answer = generateSubjectAnswer(prompt);
       return res.json({ 
         answer, 
         model: 'A2Z Science AI Engine v2 (Fallback)',
