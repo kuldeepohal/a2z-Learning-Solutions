@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Class 6 Science Chapter 1 Practice Test | A2Z Learning Solutions</title>
+<meta name="description" content="Practice test for Class 6 Science Chapter 1: The Wonderful World of Science. Attempt, score and analyse your result.">
+<link rel="stylesheet" href="../../../style.css">
+<style>
+main{max-width:900px;margin:auto;padding:28px 20px 60px}.hero{background:var(--navy);color:#fff;border-radius:20px;padding:34px 26px}.hero h1{margin:8px 0}.muted{color:var(--ink-soft)}.quiz{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}.question{padding:18px 0;border-bottom:1px solid var(--line)}.question:last-of-type{border-bottom:0}.question label{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;cursor:pointer}.question label:hover{border-color:var(--teal);background:#eefaf8}.btn{margin-top:18px}.result{display:none;margin-top:18px;padding:18px;border-radius:12px;background:#eefaf8}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}.stat strong{display:block;font-size:1.5rem;color:var(--navy)}@media(max-width:600px){.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="container nav-wrap"><a class="logo" href="../../../index.html">A2Z <span class="accent">Learning</span></a><nav><a href="./">Chapter</a><a href="../../../index.html">Home</a></nav></div></header>
+<main>
+<section class="hero"><span>CLASS 6 · SCIENCE · CHAPTER 1</span><h1>Practice Test: The Wonderful World of Science</h1><p>Attempt the test without notes, submit it, then use your score to decide whether to revise or move forward.</p></section>
+<div class="stats"><div class="stat"><strong id="lastScore">—</strong>Last score</div><div class="stat"><strong id="accuracy">—</strong>Accuracy</div><div class="stat"><strong id="attempts">0</strong>Attempts</div></div>
+<form class="quiz" id="quiz">
+<div class="question"><p><strong>1. What is the most important starting point of scientific learning?</strong></p><label><input type="radio" name="q1" value="a"> Memorising facts</label><label><input type="radio" name="q1" value="b"> Curiosity</label><label><input type="radio" name="q1" value="c"> Guessing without testing</label></div>
+<div class="question"><p><strong>2. Which step follows observation in the scientific method described in the chapter?</strong></p><label><input type="radio" name="q2" value="a"> Question</label><label><input type="radio" name="q2" value="b"> Analysis</label><label><input type="radio" name="q2" value="c"> Final conclusion</label></div>
+<div class="question"><p><strong>3. What is an experiment used for?</strong></p><label><input type="radio" name="q3" value="a"> Testing a possible answer</label><label><input type="radio" name="q3" value="b"> Avoiding questions</label><label><input type="radio" name="q3" value="c"> Replacing observation</label></div>
+<div class="question"><p><strong>4. What does analysis mean in the chapter's scientific method?</strong></p><label><input type="radio" name="q4" value="a"> Ignoring results</label><label><input type="radio" name="q4" value="b"> Examining results to see whether they answer the question</label><label><input type="radio" name="q4" value="c"> Making an untested guess</label></div>
+<div class="question"><p><strong>5. Which sequence best matches the chapter?</strong></p><label><input type="radio" name="q5" value="a"> Observe → Question → Possible answer → Test → Analyse</label><label><input type="radio" name="q5" value="b"> Test → Guess → Observe → Analyse → Question</label><label><input type="radio" name="q5" value="c"> Memorise → Test → Question → Ignore → Analyse</label></div>
+<button class="btn btn-primary" type="submit">Submit Test →</button><div class="result" id="result" role="status"></div>
+</form>
+<p class="muted" style="margin-top:18px">Your score and attempt count are stored only in this browser. No account or server-side tracking is used by this prototype.</p>
+</main>
+<script>
+const key='a2z-c6-sci-ch1-test';const answers={q1:'b',q2:'a',q3:'a',q4:'b',q5:'a'};const $=id=>document.getElementById(id);let attempts=Number(localStorage.getItem(key+'-attempts')||0);$('attempts').textContent=attempts;const old=localStorage.getItem(key+'-score');if(old!==null){$('lastScore').textContent=old+'/5';$('accuracy').textContent=Math.round(Number(old)/5*100)+'%';}
+document.getElementById('quiz').addEventListener('submit',e=>{e.preventDefault();let score=0;for(const q in answers){const selected=document.querySelector('input[name='+q+']:checked');if(selected?.value===answers[q])score++;}attempts++;localStorage.setItem(key+'-attempts',attempts);localStorage.setItem(key+'-score',score);$('attempts').textContent=attempts;$('lastScore').textContent=score+'/5';$('accuracy').textContent=Math.round(score/5*100)+'%';const r=$('result');r.style.display='block';r.textContent=score===5?'Excellent — you are ready for the next chapter.':score>=3?'Good progress — revise the chapter summary and retry.':'Revise the notes, terms and scientific-method diagram before trying again.';r.scrollIntoView({behavior:'smooth',block:'nearest'});});
+</script>
+</body>
+</html>
