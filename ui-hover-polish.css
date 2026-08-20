@@ -1,0 +1,122 @@
+/* A2Z Learning Solutions — Professional interaction layer */
+
+:root {
+  --ui-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ui-hover-shadow: 0 12px 28px rgba(20, 33, 61, 0.16);
+}
+
+/* Navigation: crisp lift + active emphasis */
+header nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  transition: color .22s var(--ui-ease), transform .22s var(--ui-ease), background-color .22s var(--ui-ease), box-shadow .22s var(--ui-ease);
+}
+header nav a:not(.cta):hover,
+header nav a:not(.cta):focus-visible {
+  color: var(--teal);
+  font-weight: 800;
+  transform: translateY(-2px);
+}
+header nav a:not(.cta)::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .22s var(--ui-ease);
+}
+header nav a:not(.cta):hover::after,
+header nav a:not(.cta):focus-visible::after { transform: scaleX(1); }
+
+header nav a.cta:hover,
+header nav a.cta:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 107, 87, .28);
+  filter: saturate(1.08);
+}
+
+/* Buttons */
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  transition: transform .22s var(--ui-ease), box-shadow .22s var(--ui-ease), background-color .22s ease, border-color .22s ease, color .22s ease;
+}
+.btn:hover,
+.btn:focus-visible,
+button:hover,
+button:focus-visible,
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible,
+input[type="button"]:hover,
+input[type="button"]:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--ui-hover-shadow);
+  font-weight: 800;
+}
+.btn:active,
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active { transform: translateY(0) scale(.98); }
+
+/* Cards and clickable learning tiles */
+.feature-card,
+.card,
+.resource-card,
+.topic-card,
+.chapter-card,
+.exam-card,
+.notice-item,
+.home-links a {
+  transition: transform .25s var(--ui-ease), box-shadow .25s var(--ui-ease), border-color .25s ease, background-color .25s ease;
+}
+.feature-card:hover,
+.card:hover,
+.resource-card:hover,
+.topic-card:hover,
+.chapter-card:hover,
+.exam-card:hover,
+.notice-item:hover,
+.home-links a:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ui-hover-shadow);
+  border-color: var(--teal);
+}
+
+.feature-card:hover h3,
+.card:hover h3,
+.resource-card:hover h3,
+.topic-card:hover h3,
+.chapter-card:hover h3,
+.exam-card:hover h3 { font-weight: 800; }
+
+/* Text links throughout the site */
+main a:not(.btn):not(.feature-card):not(.card):not(.home-links a) {
+  transition: color .2s ease, font-weight .2s ease, transform .2s ease;
+}
+main a:not(.btn):not(.feature-card):not(.card):not(.home-links a):hover,
+main a:not(.btn):not(.feature-card):not(.card):not(.home-links a):focus-visible {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+/* Interactive controls */
+select:hover,
+input:hover,
+textarea:hover { border-color: var(--teal); }
+select:focus,
+input:focus,
+textarea:focus { outline: 3px solid rgba(33,176,166,.16); outline-offset: 1px; }
+
+/* Respect keyboard users and reduced-motion preferences */
+:focus-visible { outline: 3px solid rgba(33,176,166,.45); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
+}
