@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us | A2Z Learning Solutions</title>
+<meta name="description" content="Contact A2Z Learning Solutions for learning resources, academic support, suggestions and enquiries.">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ui-hover-polish.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:24px}.contact-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}.contact-card h2{margin-top:0}.contact-info{display:grid;gap:14px;margin-top:20px}.contact-item{padding:15px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}.contact-item strong{display:block;margin-bottom:3px}.contact-item a{color:var(--teal);font-weight:700}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-weight:700}.field input,.field textarea,.field select{width:100%;box-sizing:border-box;padding:12px 13px;border:1px solid #cfd5df;border-radius:10px;background:#fff;font:inherit;color:inherit}.field textarea{min-height:150px;resize:vertical}.submit{margin-top:18px;border:0;cursor:pointer}.note{margin-top:14px;font-size:.85rem;color:var(--ink-soft)}@media(max-width:800px){.contact-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="container nav-wrap"><a class="logo" href="index.html">A2Z <span class="accent">Learning</span></a><nav><a href="classes.html">Classes</a><a href="competitive-exams.html">Competitive Exams</a><a href="neet-jee.html">NEET &amp; JEE</a><a href="recent-updates.html">Notices</a><a href="about-us.html">About Us</a><a class="cta" href="auth.html">Student Login</a></nav></div></header>
+<main>
+<section class="hero"><div class="container hero-inner"><div><span class="eyebrow">GET IN TOUCH</span><h1>Contact A2Z Learning Solutions</h1><p class="lead">Have a question about our learning resources, academic updates, competitive preparation or a suggestion for the platform? Send us a message.</p><div class="hero-actions"><a class="btn btn-primary" href="#contact-form">Send an Enquiry</a><a class="btn btn-secondary" href="index.html">Back to Home</a></div></div></div></section>
+<section class="section"><div class="container contact-grid">
+<article class="contact-card"><h2>We'd love to hear from you</h2><p>A2Z Learning Solutions is building structured learning resources for school students and competitive-exam aspirants. Your questions and suggestions can help us improve the platform.</p><div class="contact-info"><div class="contact-item"><strong>📚 Learning Resources</strong><span>Questions about Classes 6–12 notes, chapters, quizzes and study material.</span></div><div class="contact-item"><strong>🏆 Competitive Preparation</strong><span>Enquiries about Olympiads, Homi Bhabha, NEET and JEE learning resources.</span></div><div class="contact-item"><strong>💡 Suggestions &amp; Feedback</strong><span>Tell us what content or feature would be useful for students.</span></div><div class="contact-item"><strong>📢 Academic Updates</strong><span>Report an issue or suggest an important academic notification to include.</span></div></div></article>
+<article class="contact-card" id="contact-form"><h2>Send us a message</h2><form action="#" method="post" onsubmit="return handleSubmit(event)"><div class="form-grid"><div class="field"><label for="name">Name *</label><input id="name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div><div class="field"><label for="subject">Subject *</label><select id="subject" name="subject" required><option value="">Select a subject</option><option>Learning Resources</option><option>Academic Updates</option><option>Competitive Exams</option><option>NEET / JEE</option><option>Website Feedback</option><option>Other Enquiry</option></select></div><div class="field full"><label for="message">Message *</label><textarea id="message" name="message" required placeholder="Write your question, suggestion or enquiry..."></textarea></div></div><button class="btn btn-primary submit" type="submit">Send Message →</button><p class="note" id="form-note">This form is ready for backend/email integration. No message is sent until a submission service is connected.</p></form></article>
+</div></section>
+</main>
+<footer><div class="container"><p>A2Z Learning Solutions · Learning, preparation and academic updates · <a href="contact-us.html">Contact Us</a></p></div></footer>
+<script>function handleSubmit(e){e.preventDefault();document.getElementById('form-note').textContent='Thank you. Your message form is ready, but online submission has not yet been connected to an email service.';return false;}</script>
+</body>
+</html>
