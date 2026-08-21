@@ -1,157 +1,19 @@
-<!DOCTYPE html>
-<html lang="en-IN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="title" content="Chapter 3: Mindful Eating: A Path to a Healthy Body | Class 6">
-  <meta name="description" content="Class 6 Chapter 3 - Mindful Eating: A Path to a Healthy Body. NCERT notes and study materials.">
-  <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    :root { --navy: #14213d; --navy-soft: #1f2e52; --teal: #21b0a6; --coral: #ff6b57; --paper: #f6f5f0; --paper-card: #ffffff; --ink: #14213d; --ink-soft: #5b6478; --line: #e3e1d8; --radius: 18px; --shadow: 0 10px 30px -12px rgba(20, 33, 61, 0.25); }
-    body { margin: 0; background: linear-gradient(180deg, #f6f5f0 0%, #f9f8f4 100%); color: var(--ink); font-family: 'Inter', sans-serif; }
-    .chapter-shell { min-height: 100vh; }
-    .chapter-topbar { background: rgba(246, 245, 240, 0.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; }
-    .chapter-topbar-inner { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .chapter-logo { display: flex; align-items: center; gap: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 1.35rem; color: var(--navy); }
-    .chapter-logo span { color: var(--teal); }
-    .chapter-nav { display: flex; gap: 10px; }
-    .chapter-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; }
-    .chapter-nav a:hover { background: var(--teal); }
-    .chapter-main { max-width: 1100px; margin: 0 auto; padding: 30px 24px 60px; }
-    .chapter-hero { background: radial-gradient(circle at 85% 15%, rgba(33, 176, 166, 0.16), transparent 45%), radial-gradient(circle at 8% 85%, rgba(255, 178, 56, 0.18), transparent 40%), var(--navy); color: #fff; padding: 40px 30px; border-radius: 24px; box-shadow: var(--shadow); margin-bottom: 28px; }
-    .chapter-hero h1 { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 12px; }
-    .chapter-hero p { max-width: 700px; color: rgba(255, 255, 255, 0.82); font-size: 1.02rem; line-height: 1.7; margin: 0; }
-    .chapter-meta { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
-    .chapter-badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.15); color: #fff; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.25); }
-    .chapter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-    .chapter-card { background: var(--paper-card); border: 2px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-    .chapter-card-header { background: linear-gradient(135deg, rgba(33, 176, 166, 0.12), rgba(255, 178, 56, 0.12)); padding: 18px 20px; border-bottom: 1px solid var(--line); }
-    .chapter-card-header h2 { font-family: 'Baloo 2', sans-serif; font-size: 1.3rem; color: var(--navy); margin: 0; }
-    .chapter-card-body { padding: 20px; }
-    .chapter-card-body p { color: var(--ink); line-height: 1.7; margin: 0 0 15px 0; }
-    .chapter-card-body ul { list-style: none; padding: 0; margin: 0; }
-    .chapter-card-body li { background: #f9fbfd; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; color: var(--ink-soft); font-size: 0.95rem; }
-    .chapter-card-body li strong { color: var(--navy); }
-    .pdf-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
-    .pdf-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--coral); color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; transition: all 0.3s ease; }
-    .pdf-btn:hover { background: #e5573f; transform: translateY(-2px); }
-    .pdf-btn-secondary { background: var(--teal); }
-    .pdf-btn-secondary:hover { background: #1B968D; }
-    .content-placeholder { background: rgba(33, 176, 166, 0.08); border: 2px dashed var(--line); border-radius: var(--radius); padding: 40px 30px; text-align: center; color: var(--ink-soft); }
-    .content-placeholder h3 { color: var(--navy); margin-top: 0; }
-    @media (max-width: 840px) { .chapter-grid { grid-template-columns: 1fr; } .chapter-nav { flex-direction: column; width: 100%; } .chapter-nav a { width: 100%; } .pdf-buttons { flex-direction: column; } .pdf-btn { width: 100%; } }
-  </style>
-</head>
-<body>
-  <div class="chapter-shell">
-    <header class="chapter-topbar">
-      <div class="chapter-topbar-inner">
-        <a href="../index.html" class="chapter-logo"><span>🧪</span> A2Z Learning</a>
-        <div class="chapter-nav">
-          <a href="class6.html">← Back to Class 6</a>
-          <a href="../index.html">🏠 Home</a>
-        </div>
-      </div>
-    </header>
-
-    <main class="chapter-main">
-      <section class="chapter-hero">
-        <h1>Chapter 3: Mindful Eating: A Path to a Healthy Body</h1>
-        <p>Comprehensive study materials and resources for understanding this chapter.</p>
-        <div class="chapter-meta">
-          <span class="chapter-badge">Class 6</span>
-          <span class="chapter-badge">NCERT</span>
-          <span class="chapter-badge">Science</span>
-        </div>
-      </section>
-
-      <section class="chapter-grid">
-        <article class="chapter-card">
-          <div class="chapter-card-header"><h2>📚 Study Materials</h2></div>
-          <div class="chapter-card-body">
-            <p>Access comprehensive study notes and materials for this chapter:</p>
-            <div class="pdf-buttons">
-              <a href="chapter-files/class6-ch3-notes.pdf" class="pdf-btn" download>📄 Download Notes</a>
-              <a href="chapter-files/class6-ch3-summary.pdf" class="pdf-btn pdf-btn-secondary" download>📋 Quick Summary</a>
-            </div>
-            <ul style="margin-top: 15px;">
-              <li><strong>Key Concepts:</strong> Core topics covered in this chapter</li>
-              <li><strong>Important Terms:</strong> Essential vocabulary and definitions</li>
-              <li><strong>Core Learning:</strong> Main concepts and principles</li>
-              <li><strong>Focus Areas:</strong> Topics important for exams</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="chapter-card">
-          <div class="chapter-card-header"><h2>🎯 Learning Objectives</h2></div>
-          <div class="chapter-card-body">
-            <p>By the end of this chapter, you should be able to:</p>
-            <ul>
-              <li>Understand core concepts and principles</li>
-              <li>Apply knowledge to real-world situations</li>
-              <li>Solve problems and numerical questions</li>
-              <li>Explain concepts in your own words</li>
-              <li>Connect topics with previous chapters</li>
-              <li>Prepare for classroom and board exams</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="chapter-grid" style="margin-top: 20px;">
-        <article class="chapter-card">
-          <div class="chapter-card-header"><h2>✏️ Practice & Revision</h2></div>
-          <div class="chapter-card-body">
-            <p>Test your understanding with practice materials:</p>
-            <div class="pdf-buttons">
-              <a href="chapter-files/class6-ch3-questions.pdf" class="pdf-btn" download>❓ Sample Questions</a>
-              <a href="chapter-files/class6-ch3-answers.pdf" class="pdf-btn pdf-btn-secondary" download>✅ Answer Key</a>
-            </div>
-            <ul style="margin-top: 15px;">
-              <li><strong>Short Answer Questions:</strong> Quick recall exercises</li>
-              <li><strong>Long Answer Questions:</strong> Detailed explanations</li>
-              <li><strong>Multiple Choice:</strong> Concept testing</li>
-              <li><strong>Problem Solving:</strong> Numerical and practical questions</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="chapter-card">
-          <div class="chapter-card-header"><h2>💡 Study Tips</h2></div>
-          <div class="chapter-card-body">
-            <ul>
-              <li><strong>Read & Understand:</strong> Read the chapter thoroughly first</li>
-              <li><strong>Make Notes:</strong> Write down key points and formulas</li>
-              <li><strong>Draw Diagrams:</strong> Visual learning aids understanding</li>
-              <li><strong>Practice Questions:</strong> Solve multiple practice questions</li>
-              <li><strong>Regular Revision:</strong> Review concepts regularly</li>
-              <li><strong>Group Study:</strong> Discuss with peers to clarify doubts</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <section style="margin-top: 30px;">
-        <article class="chapter-card">
-          <div class="chapter-card-header"><h2>📖 Chapter Content</h2></div>
-          <div class="chapter-card-body">
-            <div class="content-placeholder">
-              <h3>Content Coming Soon</h3>
-              <p>Detailed chapter content, diagrams, and explanations will be added here shortly. Download the PDF materials above for comprehensive study resources.</p>
-              <div class="pdf-buttons" style="justify-content: center; margin-top: 20px;">
-                <a href="class6.html" class="pdf-btn pdf-btn-secondary">← Back to Chapter List</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
-  </div>
-</body>
-</html>
+<!doctype html>
+<html lang="en-IN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Class 6 Science Chapter 3: Mindful Eating | A2Z Learning Solutions</title><meta name="description" content="Class 6 Science Chapter 3 Mindful Eating: study notes, nutrients, balanced diet, deficiencies, food choices, revision, practice and chapter test."><link rel="stylesheet" href="../style.css"><style>
+.wrap{max-width:1100px;margin:auto;padding:28px 20px 60px}.hero{background:#14213d;color:#fff;padding:34px;border-radius:22px}.hero h1{margin:0 0 10px}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}.steps a{padding:12px;text-align:center;border:1px solid #e3e1d8;border-radius:12px;background:#fff;color:#14213d;text-decoration:none;font-weight:800}.card{background:#fff;border:1px solid #e3e1d8;border-radius:16px;padding:20px;margin:16px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.highlight{background:#eefaf8;border-left:4px solid #21b0a6;padding:14px;border-radius:8px}.data{width:100%;border-collapse:collapse}.data th,.data td{border:1px solid #ddd;padding:10px;text-align:left}.data th{background:#f4f5f7}.term{font-weight:800;color:#167d75}.btn{display:inline-block;background:#14213d;color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}.quiz{padding:18px;border:1px solid #ddd;border-radius:14px;background:#fff}.quiz label{display:block;margin:8px 0;padding:9px;border:1px solid #ddd;border-radius:8px}.result{display:none;margin-top:15px;padding:14px;background:#eefaf8;border-radius:10px;font-weight:800}@media(max-width:750px){.steps,.grid{grid-template-columns:1fr}}
+</style></head><body><main class="wrap">
+<section class="hero"><p>CLASS 6 • SCIENCE • CHAPTER 3</p><h1>Mindful Eating: A Path to a Healthy Body</h1><p>Learn how food choices, nutrients, balanced diets and mindful eating are connected with a healthy body.</p></section>
+<nav class="steps"><a href="#learn">1. Learn</a><a href="#practice">2. Practice</a><a href="#revise">3. Revise</a><a href="#test">4. Test</a><a href="#analyse">5. Analyse</a></nav>
+<section id="learn"><h2>📖 Learn — Study Notes</h2>
+<div class="card"><h2>What is mindful eating?</h2><p>Mindful eating means paying attention to what we eat and making thoughtful food choices. Food is not only about taste; it supplies the body with substances needed for growth, energy, repair and proper functioning.</p></div>
+<div class="card"><h2>🍚 Nutrients and their functions</h2><div class="grid"><div><h3>Carbohydrates</h3><p>Provide energy for daily activities.</p><h3>Proteins</h3><p>Help growth and repair of body tissues.</p><h3>Fats</h3><p>Provide energy and are part of a healthy diet when consumed appropriately.</p></div><div><h3>Vitamins</h3><p>Needed in small quantities for normal body functions and maintaining health.</p><h3>Minerals</h3><p>Needed for important body processes and healthy development.</p><h3>Water & fibre</h3><p>Water is essential for body functions; fibre supports healthy digestion.</p></div></div></div>
+<div class="card"><h2>🥗 Balanced Diet</h2><p>A balanced diet provides the body with the different nutrients it needs in suitable amounts. A healthy food pattern should include variety rather than relying on only one kind of food.</p><div class="highlight"><strong>Think before choosing:</strong> variety + appropriate quantity + nutritional value + regular healthy habits.</div></div>
+<div class="card"><h2>🥬 Food sources</h2><div class="table-wrap"><table class="data"><tr><th>Nutrient</th><th>Examples of food sources</th></tr><tr><td>Carbohydrates</td><td>Rice, wheat, potatoes and other cereal/tuber foods</td></tr><tr><td>Proteins</td><td>Pulses, beans, milk, eggs, nuts and other protein-rich foods</td></tr><tr><td>Fats</td><td>Oils, nuts, seeds, ghee and other fat-containing foods</td></tr><tr><td>Vitamins & minerals</td><td>Fruits, vegetables, milk and other varied foods</td></tr></table></div></div>
+<div class="card"><h2>⚠️ Deficiency and health</h2><p>If the diet does not provide enough of a required nutrient over time, deficiency can affect health. The chapter encourages recognising the relationship between food, nutrients and the body's needs rather than treating one food as a complete solution.</p><div class="highlight"><strong>Study habit:</strong> Learn the nutrient → function → food-source relationship, and use examples to explain it.</div></div>
+<div class="card"><h2>🧠 Food choices and mindful habits</h2><ul><li>Notice what you are eating instead of eating without attention.</li><li>Prefer a varied diet that supplies different nutrients.</li><li>Think about nutritional value, not only taste or appearance.</li><li>Maintain healthy eating habits and avoid treating highly processed or sugary foods as the main part of the diet.</li><li>Connect food choices with growth, energy, health and daily activity.</li></ul></div>
+</section>
+<section id="practice"><h2>✏️ Practice</h2><div class="grid"><div class="card"><h3>Short Answer</h3><ol><li>What is mindful eating?</li><li>Why does the body need nutrients?</li><li>What is a balanced diet?</li><li>Name the major nutrients discussed in the chapter and state one function of each.</li><li>Why is variety important in a healthy diet?</li></ol></div><div class="card"><h3>Application</h3><ol><li>A student eats mostly one type of food every day. What could be the problem with this habit?</li><li>How would you explain the difference between food being tasty and food being nutritious?</li><li>Design a simple one-day varied meal pattern and explain why you selected the foods.</li><li>Why should food choices be connected to the body's needs?</li></ol></div></div></section>
+<section id="revise"><h2>🔄 Revise — 5-Minute Revision</h2><div class="card"><div class="highlight"><strong>Remember:</strong> Food → Nutrients → Body functions → Balanced variety → Mindful choices.</div><ul><li><strong>Mindful eating:</strong> paying attention to food and making thoughtful choices.</li><li><strong>Carbohydrates:</strong> important energy source.</li><li><strong>Proteins:</strong> growth and tissue repair.</li><li><strong>Fats:</strong> concentrated energy and part of a balanced diet.</li><li><strong>Vitamins/minerals:</strong> support normal body functions and health.</li><li><strong>Water:</strong> essential for body processes.</li><li><strong>Fibre:</strong> supports healthy digestion.</li><li><strong>Balanced diet:</strong> varied food intake supplying required nutrients in suitable amounts.</li></ul></div></section>
+<section id="test"><h2>🎯 Test — Chapter Quiz</h2><form class="quiz" id="quiz"><p><strong>1. Which idea best describes mindful eating?</strong></p><label><input type="radio" name="q1" value="a"> Eating only favourite foods</label><label><input type="radio" name="q1" value="b"> Paying attention to food and making thoughtful choices</label><label><input type="radio" name="q1" value="c"> Skipping meals</label><p><strong>2. Which nutrient group is an important source of energy?</strong></p><label><input type="radio" name="q2" value="a"> Carbohydrates</label><label><input type="radio" name="q2" value="b"> Vitamins</label><label><input type="radio" name="q2" value="c"> Minerals</label><p><strong>3. Which nutrient is strongly associated with growth and repair of tissues?</strong></p><label><input type="radio" name="q3" value="a"> Protein</label><label><input type="radio" name="q3" value="b"> Water</label><label><input type="radio" name="q3" value="c"> Fibre</label><p><strong>4. What is a key feature of a balanced diet?</strong></p><label><input type="radio" name="q4" value="a"> Only one food group</label><label><input type="radio" name="q4" value="b"> Variety and suitable amounts of required nutrients</label><label><input type="radio" name="q4" value="c"> Maximum sugary food</label><button class="btn" type="submit">Submit Quiz →</button><div class="result" id="result"></div></form></section>
+<section id="analyse"><h2>📊 Analyse</h2><div class="card"><p><strong>Last score:</strong> <span id="score">—</span> &nbsp; <strong>Attempts:</strong> <span id="attempts">0</span></p><p>Use your result to decide whether to revise the Learn section and retake the quiz.</p></div></section>
+</main><script>(function(){const f=document.getElementById('quiz'),r=document.getElementById('result'),s=document.getElementById('score'),a=document.getElementById('attempts');let n=Number(localStorage.getItem('a2z-c6-ch3-attempts')||0);a.textContent=n;const old=localStorage.getItem('a2z-c6-ch3-score');if(old!==null)s.textContent=old+'/4';f.addEventListener('submit',e=>{e.preventDefault();const ans={q1:'b',q2:'a',q3:'a',q4:'b'};let x=0;for(const q in ans){const v=f.querySelector('input[name='+q+']:checked');if(v&&v.value===ans[q])x++}n++;localStorage.setItem('a2z-c6-ch3-attempts',n);localStorage.setItem('a2z-c6-ch3-score',x);s.textContent=x+'/4';a.textContent=n;r.style.display='block';r.textContent=x===4?'Excellent!':x>=2?'Good. Review and retry to improve.':'Revisit Learn and Revise, then try again.'})})();</script></body></html>
