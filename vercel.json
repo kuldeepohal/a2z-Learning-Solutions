@@ -1,12 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "cleanUrls": false,
+  "trailingSlash": false,
   "functions": {
     "api/index.js": {
       "maxDuration": 30
     }
   },
   "rewrites": [
+<<<<<<< HEAD
     { "source": "/api/:path*", "destination": "/api/index.js" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/class-6", "destination": "/class-6/science/index.html" },
@@ -14,6 +17,9 @@
     { "source": "/class-8", "destination": "/class-8/science/index.html" },
     { "source": "/class-9", "destination": "/class-9/science/index.html" },
     { "source": "/class-10", "destination": "/class-10/science/index.html" }
+=======
+    { "source": "/api/:path*", "destination": "/api/index.js" }
+>>>>>>> deebbe41edc9431e6102dbf505990bcb66fa6440
   ],
   "headers": [
     {
