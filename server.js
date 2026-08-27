@@ -5,6 +5,14 @@ const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
+const connectDB = require('./backend/db');
+const User = require('./backend/models/User');
+const Content = require('./backend/models/Content');
+const { protect } = require('./backend/middleware/authMiddleware');
+const jwt = require('jsonwebtoken');
+
+// Connect to database
+connectDB();
 
 let Razorpay = null;
 try {
@@ -386,6 +394,94 @@ app.post('/subscribe', async (req, res) => {
     res.json({ success: true, txnId: entry.id, plan: entry.plan, amount: entry.amount });
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// -------------------------------------------------------------
+// USER & AUTHENTICATION ENDPOINTS (Phase 1)
+// -------------------------------------------------------------
+
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET || 'fallback_secret', {
+    expiresIn: '30d',
+  });
+};
+
+app.post('/api/auth/register', async (req, res) => {
+  try {
+    const { name, email, password, grade } = req.body;
+
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+      return res.status(400).json({ error: 'User already exists' });
+    }
+
+    const user = await User.create({ name, email, password, grade });
+
+    if (user) {
+      res.status(201).json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        token: generateToken(user._id)
+      });
+    } else {
+      res.status(400).json({ error: 'Invalid user data' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (user && (await user.matchPassword(password))) {
+      res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        token: generateToken(user._id)
+      });
+    } else {
+      res.status(401).json({ error: 'Invalid email or password' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Profile endpoint
+app.get('/api/user/profile', protect, async (req, res) => {
+  const user = await User.findById(req.user._id);
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).json({ error: 'User not found' });
+  }
+});
+
+// -------------------------------------------------------------
+// CMS CONTENT ENDPOINTS (Phase 1)
+// -------------------------------------------------------------
+app.get('/api/content/blogs', async (req, res) => {
+  try {
+    const blogs = await Content.find({ type: 'blog' }).sort({ createdAt: -1 });
+    res.json(blogs);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/content/videos', async (req, res) => {
+  try {
+    const videos = await Content.find({ type: 'video' }).sort({ createdAt: -1 });
+    res.json(videos);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 

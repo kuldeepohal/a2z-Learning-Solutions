@@ -1,28 +1,5 @@
 # A2Z Learning Solutions - Website Analysis and Roadmap
 
-## 1. Website/Repo Analysis & Missing Links (RESOLVED)
-Upon analyzing the current state of the repository, the following issues were identified and have now been **resolved**:
-* **[RESOLVED] Merge Conflicts:** The `index.html` file contained a Git merge conflict block for the grade card links, which has been fixed to use the correct absolute paths.
-* **[RESOLVED] Missing Links/Pages:** 
-  * The navigation links to `/class-11/science/index.html` and `/class-12/science/index.html` were missing actual subject pages and instead placed as `class-11.html` at the root. These have been moved to their proper subdirectories, with relative links updated accordingly.
-  * **Redundant Legal & Contact Pages:** The older, bulkier versions (`terms.html`, `contact.html`, `about.html`) were deleted to prevent SEO overlap, retaining the newer standardized variants (`terms-conditions.html`, `contact-us.html`, `about-us.html`) across the platform.
-* **[RESOLVED] Navigation Inconsistencies:** All primary pages are now consolidated without overlapping files.
-
-## 2. Monetization Opportunities (Earning More)
-To generate income from this educational platform, consider implementing the following monetization strategies:
-* **Freemium Model:** Offer basic notes and introductory chapters for free, but lock premium content (advanced revision notes, detailed video solutions, mind maps) behind a subscription.
-* **Test Series & Mock Exams:** Launch specialized paid mock tests for Competitive Exams (JEE/NEET).
-* **Ad Placements (Google AdSense):** Integrate non-intrusive display ads in the sidebar or between sections of free reading material.
-* **Affiliate Marketing:** Recommend specific reference books (e.g., NCERT solutions, RD Sharma, HC Verma) via Amazon Affiliate links.
-* **Live Doubt Solving / Mentorship:** Offer a premium feature where students pay per question or buy a monthly package for live 1-on-1 doubt solving with a tutor (integrating the existing `doubt-solver.html` or `AI_DOUBT_SOLVER`).
-
-## 3. Sections to be Added
-To enhance user engagement and provide more value:
-* **User Dashboard:** A login area (expanding on `auth.html`) where students can track their progress, bookmark notes, and view test scores.
-* **Blog / Study Tips Section:** A blog to drive organic traffic (SEO) with articles on "How to prepare for board exams", "Time management tips", etc.
-* **Discussion Forum:** A community space where students can ask questions and peers or teachers can answer.
-* **Video Lectures Library:** A dedicated section embedding YouTube or hosted video explanations for complex topics.
-
 ## 4. Day-Wise Roadmap (2 Hours Daily)
 This plan assumes 2 hours of focused work each day to implement the above improvements over the next 2-3 weeks.
 

@@ -12,6 +12,10 @@
     "node": "24.x"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.4",
     "nodemailer": "^7.0.0",
     "razorpay": "^2.9.5"
   },

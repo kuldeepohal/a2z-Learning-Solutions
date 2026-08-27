@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Tips Blog | A2Z Learning Solutions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.blog-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+.blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.blog-thumb { height: 180px; background: #e3ebf3; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--navy); }
+.blog-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.blog-content h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+.blog-content p { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 20px; flex: 1; }
+.blog-meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 10px; font-weight: 600; }
+.featured-blog { background: linear-gradient(135deg, var(--navy), var(--navy-soft)); color: #fff; border-radius: var(--radius); padding: 40px; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+.featured-blog h2 { font-size: 2rem; margin-bottom: 15px; color: var(--amber); }
+.featured-blog p { color: #dce7f1; font-size: 1.1rem; margin-bottom: 24px; }
+@media(max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } .featured-blog { grid-template-columns: 1fr; text-align: center; } }
+@media(max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="logo" href="index.html">A2Z <span class="accent">Learning</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classes.html">Classes</a>
+      <a href="blog.html" style="color:var(--teal)">Blog</a>
+      <a href="forum.html">Forum</a>
+      <a href="video-library.html">Videos</a>
+      <a href="auth.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">Login</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <div class="featured-blog">
+    <div class="featured-content">
+      <span class="pro-badge" style="margin-left:0; margin-bottom: 15px; display:inline-block">Featured</span>
+      <h2>How to Prepare for Board Exams Effectively</h2>
+      <p>Discover scientifically proven study techniques, time management strategies, and the best revision methods to ace your Class 10 and 12 board exams.</p>
+      <a href="#" class="btn btn-primary">Read Article</a>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; height: 250px; display:flex; align-items:center; justify-content:center; font-size: 4rem;">🎓</div>
+  </div>
+
+  <h2 style="margin-top: 50px;">Latest Study Tips & News</h2>
+  <div class="blog-grid" id="blogGrid">
+    <p>Loading blogs...</p>
+  </div>
+</main>
+<footer class="footer" style="margin-top: 80px;">
+  <div class="container">
+    <p>A2Z Learning Solutions · Blog & Study Tips</p>
+  </div>
+</footer>
+<script>
+  async function loadBlogs() {
+    try {
+      const res = await fetch('/api/content/blogs');
+      const blogs = await res.json();
+      const grid = document.getElementById('blogGrid');
+      grid.innerHTML = '';
+      if (!blogs.length) {
+        grid.innerHTML = '<p>No blogs published yet.</p>';
+        return;
+      }
+      blogs.forEach(blog => {
+        grid.innerHTML += `
+          <article class="blog-card">
+            <div class="blog-thumb">${blog.thumbnail || '📝'}</div>
+            <div class="blog-content">
+              <div class="blog-meta"><span>${new Date(blog.createdAt).toLocaleDateString()}</span><span>${blog.tags[0] || 'Updates'}</span></div>
+              <h3>${blog.title}</h3>
+              <p>${blog.description}</p>
+              <a href="${blog.url}" class="btn btn-outline">Read More</a>
+            </div>
+          </article>
+        `;
+      });
+    } catch (e) {
+      console.error(e);
+      document.getElementById('blogGrid').innerHTML = '<p>Failed to load blogs.</p>';
+    }
+  }
+  loadBlogs();
+</script>
+</body>
+</html>

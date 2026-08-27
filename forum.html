@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Discussion Forum | A2Z Learning Solutions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.forum-header { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 20px; }
+.forum-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+.forum-tag { padding: 6px 14px; background: #e3ebf3; color: var(--navy); border-radius: 999px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+.forum-tag:hover, .forum-tag.active { background: var(--teal); color: #fff; }
+.thread-list { display: flex; flex-direction: column; gap: 15px; }
+.thread-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: flex; gap: 20px; align-items: flex-start; transition: box-shadow 0.2s; }
+.thread-card:hover { box-shadow: var(--shadow); border-color: var(--teal); }
+.thread-stats { display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 60px; }
+.stat-box { display: flex; flex-direction: column; align-items: center; padding: 8px; border-radius: 8px; width: 100%; }
+.stat-box.votes { color: var(--ink-soft); font-weight: 700; }
+.stat-box.answers { background: #e8f4f0; color: var(--teal); border: 1px solid var(--teal); font-weight: 700; }
+.thread-content { flex: 1; }
+.thread-title { font-size: 1.2rem; color: var(--navy); margin-bottom: 8px; font-weight: 700; }
+.thread-meta { font-size: 0.85rem; color: var(--ink-soft); display: flex; gap: 15px; }
+.thread-meta span { display: flex; align-items: center; gap: 4px; }
+@media(max-width: 600px) { .thread-card { flex-direction: column; } .thread-stats { flex-direction: row; width: 100%; justify-content: flex-start; gap: 15px; } .stat-box { width: auto; flex-direction: row; gap: 5px; padding: 4px 10px; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="logo" href="index.html">A2Z <span class="accent">Learning</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classes.html">Classes</a>
+      <a href="blog.html">Blog</a>
+      <a href="forum.html" style="color:var(--teal)">Forum</a>
+      <a href="video-library.html">Videos</a>
+      <a href="auth.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.85rem;">Login</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <div class="forum-header">
+    <div>
+      <h1>Community Forum</h1>
+      <p style="color: var(--ink-soft);">Ask questions, discuss topics, and help peers.</p>
+    </div>
+    <button class="btn btn-primary">Post a Question</button>
+  </div>
+
+  <div class="forum-tags">
+    <a href="#" class="forum-tag active">All Topics</a>
+    <a href="#" class="forum-tag">Physics</a>
+    <a href="#" class="forum-tag">Chemistry</a>
+    <a href="#" class="forum-tag">Biology</a>
+    <a href="#" class="forum-tag">Mathematics</a>
+    <a href="#" class="forum-tag">JEE/NEET Prep</a>
+  </div>
+
+  <div class="thread-list">
+    <div class="thread-card">
+      <div class="thread-stats">
+        <div class="stat-box votes"><span>12</span><span style="font-size:0.75rem">Votes</span></div>
+        <div class="stat-box answers"><span>3</span><span style="font-size:0.75rem">Ans</span></div>
+      </div>
+      <div class="thread-content">
+        <a href="#" class="thread-title">How to differentiate between SN1 and SN2 reactions?</a>
+        <p style="font-size:0.95rem; color:var(--ink); margin-bottom:12px;">I'm having trouble understanding the core conditions that favor SN1 over SN2 in organic chemistry. Any shortcuts or tricks to remember?</p>
+        <div class="thread-meta">
+          <span>🏷️ Chemistry</span>
+          <span>👤 Rahul S.</span>
+          <span>🕒 2 hours ago</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="thread-card">
+      <div class="thread-stats">
+        <div class="stat-box votes"><span>8</span><span style="font-size:0.75rem">Votes</span></div>
+        <div class="stat-box answers" style="background:#f6f5f0; color:var(--ink-soft); border-color:var(--line);"><span>0</span><span style="font-size:0.75rem">Ans</span></div>
+      </div>
+      <div class="thread-content">
+        <a href="#" class="thread-title">Doubt in Rotational Dynamics (Class 11)</a>
+        <p style="font-size:0.95rem; color:var(--ink); margin-bottom:12px;">Can someone explain the concept of moment of inertia for a hollow cylinder vs a solid cylinder? Why is it different if the mass is the same?</p>
+        <div class="thread-meta">
+          <span>🏷️ Physics</span>
+          <span>👤 Amit K.</span>
+          <span>🕒 5 hours ago</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="thread-card">
+      <div class="thread-stats">
+        <div class="stat-box votes"><span>24</span><span style="font-size:0.75rem">Votes</span></div>
+        <div class="stat-box answers"><span>15</span><span style="font-size:0.75rem">Ans</span></div>
+      </div>
+      <div class="thread-content">
+        <a href="#" class="thread-title">Best schedule for studying 10 hours a day?</a>
+        <p style="font-size:0.95rem; color:var(--ink); margin-bottom:12px;">I'm prepping for JEE and trying to scale my study hours. Does anyone have a good Pomodoro schedule or daily timetable they can share?</p>
+        <div class="thread-meta">
+          <span>🏷️ JEE/NEET Prep</span>
+          <span>👤 Sneha P.</span>
+          <span>🕒 1 day ago</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer" style="margin-top: 80px;">
+  <div class="container">
+    <p>A2Z Learning Solutions · Community Forum</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Dashboard | A2Z Learning Solutions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.dashboard-grid { display: grid; grid-template-columns: 250px 1fr; gap: 30px; margin-top: 30px; }
+.sidebar { background: var(--paper-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); height: fit-content; }
+.sidebar-nav { list-style: none; padding: 0; }
+.sidebar-nav li { margin-bottom: 10px; }
+.sidebar-nav a { display: block; padding: 10px 15px; border-radius: 8px; color: var(--ink); font-weight: 600; transition: background 0.2s, color 0.2s; }
+.sidebar-nav a:hover, .sidebar-nav a.active { background: var(--teal); color: #fff; }
+.progress-bar { background: var(--line); border-radius: 10px; height: 12px; margin-top: 8px; overflow: hidden; }
+.progress-fill { background: var(--teal); height: 100%; border-radius: 10px; }
+.dashboard-section { margin-bottom: 30px; }
+.stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 30px; }
+.stat-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; text-align: center; }
+.stat-card h4 { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 5px; }
+.stat-card .val { font-size: 2rem; font-weight: 800; color: var(--navy); }
+.bookmark-list { list-style: none; padding: 0; }
+.bookmark-list li { border: 1px solid var(--line); border-radius: 10px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.bookmark-list a { font-weight: 700; color: var(--navy); }
+.bookmark-list a:hover { color: var(--teal); text-decoration: underline; }
+@media(max-width: 800px) { .dashboard-grid { grid-template-columns: 1fr; } .stat-cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="logo" href="index.html">A2Z <span class="accent">Learning</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classes.html">Classes</a>
+      <a href="blog.html">Blog</a>
+      <a href="forum.html">Forum</a>
+      <a href="video-library.html">Videos</a>
+      <a href="auth.html" style="background:var(--coral);color:#fff">Logout</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <div class="dashboard-grid">
+    <aside class="sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#">My Progress</a></li>
+        <li><a href="#">Bookmarks</a></li>
+        <li><a href="#">Test Scores</a></li>
+        <li><a href="subscription.html">Manage Subscription</a></li>
+      </ul>
+    </aside>
+    <div class="dashboard-content">
+      <div class="dashboard-section card">
+        <h2>👋 Welcome back, <span id="userName">Student</span>!</h2>
+        <p>You're making great progress in Class <span id="userGrade">10</span>.</p>
+        
+        <div class="stat-cards">
+          <div class="stat-card"><h4>Chapters Completed</h4><div class="val">4/13</div></div>
+          <div class="stat-card"><h4>Mock Tests Taken</h4><div class="val">2</div></div>
+          <div class="stat-card"><h4>Avg Score</h4><div class="val">85%</div></div>
+        </div>
+
+        <h3>My Progress (Class 10)</h3>
+        <div style="margin-bottom: 15px;">
+          <div style="display:flex; justify-content:space-between; font-weight:600;"><span>Science</span><span>35%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 35%;"></div></div>
+        </div>
+        <div style="margin-bottom: 15px;">
+          <div style="display:flex; justify-content:space-between; font-weight:600;"><span>Mathematics</span><span>50%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
+        </div>
+      </div>
+
+      <div class="dashboard-section card">
+        <h2>📌 Bookmarked Notes</h2>
+        <ul class="bookmark-list">
+          <li>
+            <div>
+              <a href="notes/class10-ch4.html">Carbon and its Compounds (Class 10 Science)</a>
+              <p style="font-size: 0.85rem; color: var(--ink-soft); margin: 0;">Last accessed: 2 days ago</p>
+            </div>
+            <button class="btn btn-outline">Resume</button>
+          </li>
+          <li>
+            <div>
+              <a href="class-6/science/chapter-1/index.html">The Wonderful World of Science (Class 6)</a>
+              <p style="font-size: 0.85rem; color: var(--ink-soft); margin: 0;">Last accessed: 1 week ago</p>
+            </div>
+            <button class="btn btn-outline">Resume</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="dashboard-section card">
+        <h2>📈 Recent Test Scores</h2>
+        <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
+          <tr style="border-bottom: 2px solid var(--line);"><th style="padding: 10px;">Test Name</th><th style="padding: 10px;">Date</th><th style="padding: 10px;">Score</th><th style="padding: 10px;">Action</th></tr>
+          <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px;">Class 10 Science Chapter 1</td><td style="padding: 10px;">Aug 25, 2026</td><td style="padding: 10px; color: var(--success); font-weight: 700;">18/20</td><td style="padding: 10px;"><button class="btn" style="padding: 5px 10px;">Review</button></td></tr>
+          <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px;">Class 10 Math Foundation</td><td style="padding: 10px;">Aug 20, 2026</td><td style="padding: 10px; color: var(--amber); font-weight: 700;">14/20</td><td style="padding: 10px;"><button class="btn" style="padding: 5px 10px;">Review</button></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer" style="margin-top: 50px;">
+  <div class="container">
+    <p>A2Z Learning Solutions · Student Dashboard</p>
+  </div>
+</footer>
+<script>
+  async function fetchProfile() {
+    const token = localStorage.getItem('a2z_auth_token');
+    if (!token) {
+      window.location.href = 'auth.html';
+      return;
+    }
+    try {
+      const res = await fetch('/api/user/profile', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      if (res.ok) {
+        const user = await res.json();
+        document.getElementById('userName').textContent = user.name;
+        document.getElementById('userGrade').textContent = user.grade;
+      } else {
+        window.location.href = 'auth.html';
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  fetchProfile();
+</script>
+</body>
+</html>
