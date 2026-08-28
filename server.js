@@ -485,6 +485,53 @@ app.get('/api/content/videos', async (req, res) => {
   }
 });
 
+// -------------------------------------------------------------
+// TEST SERIES PORTAL ENDPOINTS (Day 10)
+// -------------------------------------------------------------
+app.post('/api/tests/submit', async (req, res) => {
+  try {
+    const { testId, answers } = req.body;
+    if (!testId || !answers) {
+      return res.status(400).json({ error: 'Missing testId or answers' });
+    }
+
+    const testFile = path.join(__dirname, 'backend', 'mock_tests.json');
+    if (!fs.existsSync(testFile)) {
+      return res.status(404).json({ error: 'Tests database not found' });
+    }
+
+    const testDb = JSON.parse(fs.readFileSync(testFile, 'utf8'));
+    const testData = testDb[testId];
+    if (!testData) {
+      return res.status(404).json({ error: 'Test not found' });
+    }
+
+    const correctAnswers = testData.answers;
+    let score = 0;
+    const total = Object.keys(correctAnswers).length;
+    const feedback = {};
+
+    for (let q in correctAnswers) {
+      if (answers[q] === correctAnswers[q]) {
+        score++;
+        feedback[q] = { correct: true, answer: correctAnswers[q] };
+      } else {
+        feedback[q] = { correct: false, answer: correctAnswers[q] };
+      }
+    }
+
+    res.json({
+      success: true,
+      score,
+      total,
+      feedback,
+      message: score === total ? 'Perfect score! Outstanding!' : (score >= total / 2 ? 'Good job! Review the ones you missed.' : 'Keep practicing. You will get there!')
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 A2Z Learning Solutions Server running on http://localhost:${PORT}`);
