@@ -39,13 +39,13 @@ This plan assumes 2 hours of focused work each day to implement the above improv
   * Implement the grading logic in the backend to calculate and display scores.
 
 ### Week 3: Content Expansion and Ads
-* **Day 11: Ads Integration**
+* **Day 11: Ads Integration (Completed)**
   * Apply for Google AdSense.
   * Carefully place ad slots on free pages (sidebar, footer, mid-content) without disrupting the learning experience.
-* **Day 12: Blog Section Setup**
+* **Day 12: Blog Section Setup (Completed)**
   * Create a basic blog layout.
   * Write and publish the first 2 SEO-optimized study tip articles.
-* **Day 13: Video Integration**
+* **Day 13: Video Integration (Completed)**
   * Create a video library component.
   * Embed relevant educational YouTube videos into the chapter pages.
 * **Day 14: Testing and Quality Assurance**

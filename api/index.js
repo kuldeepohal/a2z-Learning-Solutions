@@ -143,6 +143,63 @@ module.exports = async function handler(req, res) {
       return send(res, 200, { status: 'ok', service: 'A2Z Learning Solutions API', runtime: 'Vercel Functions', timestamp: new Date().toISOString() });
     }
 
+    if (req.method === 'GET' && route === 'content/blogs') {
+      const blogs = [
+        {
+          _id: "blog1",
+          title: "How to Prepare for Board Exams Effectively",
+          description: "Discover scientifically proven study techniques, time management strategies, and the best revision methods to ace your Class 10 and 12 board exams.",
+          thumbnail: "🎓",
+          tags: ["Study Tips"],
+          url: "/blog/how-to-study.html",
+          createdAt: new Date().toISOString()
+        },
+        {
+          _id: "blog2",
+          title: "Time Management for Students",
+          description: "Learn how to balance your schoolwork, competitive exam prep, and personal life using time-blocking and the Pomodoro technique.",
+          thumbnail: "⏱️",
+          tags: ["Productivity"],
+          url: "/blog/time-management.html",
+          createdAt: new Date(Date.now() - 86400000).toISOString()
+        }
+      ];
+      return send(res, 200, blogs);
+    }
+
+    if (req.method === 'GET' && route === 'content/videos') {
+      const videos = [
+        {
+          _id: "vid1",
+          title: "Newton's Laws of Motion - Full Chapter Animation",
+          grade: "9",
+          tags: ["Physics"],
+          url: "https://www.youtube.com/embed/kKKM8Y-u7ds?autoplay=1",
+          youtubeId: "kKKM8Y-u7ds",
+          duration: "12:45"
+        },
+        {
+          _id: "vid2",
+          title: "Chemical Reactions and Equations Class 10",
+          grade: "10",
+          tags: ["Chemistry"],
+          url: "https://www.youtube.com/embed/2_N1v1gU6_A?autoplay=1",
+          youtubeId: "2_N1v1gU6_A",
+          duration: "25:30"
+        },
+        {
+          _id: "vid3",
+          title: "Cell: The Unit of Life - Class 11 Biology",
+          grade: "11",
+          tags: ["Biology"],
+          url: "https://www.youtube.com/embed/5aC7hU0x8cI?autoplay=1",
+          youtubeId: "5aC7hU0x8cI",
+          duration: "18:10"
+        }
+      ];
+      return send(res, 200, videos);
+    }
+
     if (req.method === 'POST' && route === 'ask-ai') {
       if (!body.prompt) return send(res, 400, { error: 'Prompt is required' });
       try {
