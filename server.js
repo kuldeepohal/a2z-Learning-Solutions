@@ -533,8 +533,12 @@ app.post('/api/tests/submit', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 A2Z Learning Solutions Server running on http://localhost:${PORT}`);
-  console.log(`Razorpay: ${hasRazorpayConfig ? (isRazorpayLive ? 'LIVE' : 'TEST') : 'NOT CONFIGURED'}`);
-  console.log(`Email receipts: ${smtpConfigured ? 'ENABLED' : 'DISABLED'}`);
-});
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 A2Z Learning Solutions Server running on http://localhost:${PORT}`);
+    console.log(`Razorpay: ${hasRazorpayConfig ? (isRazorpayLive ? 'LIVE' : 'TEST') : 'NOT CONFIGURED'}`);
+    console.log(`Email receipts: ${smtpConfigured ? 'ENABLED' : 'DISABLED'}`);
+  });
+}
+
+module.exports = app;
