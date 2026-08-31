@@ -409,6 +409,9 @@ const generateToken = (id) => {
 
 app.post('/api/auth/register', async (req, res) => {
   try {
+    if (require('mongoose').connection.readyState !== 1) {
+      return res.status(500).json({ error: 'Database connection not established. Please configure MONGO_URI in Vercel settings.' });
+    }
     const { name, email, password, grade } = req.body;
 
     const userExists = await User.findOne({ email });
@@ -435,6 +438,9 @@ app.post('/api/auth/register', async (req, res) => {
 
 app.post('/api/auth/login', async (req, res) => {
   try {
+    if (require('mongoose').connection.readyState !== 1) {
+      return res.status(500).json({ error: 'Database connection not established. Please configure MONGO_URI in Vercel settings.' });
+    }
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
@@ -456,6 +462,9 @@ app.post('/api/auth/login', async (req, res) => {
 
 // Profile endpoint
 app.get('/api/user/profile', protect, async (req, res) => {
+  if (require('mongoose').connection.readyState !== 1) {
+    return res.status(500).json({ error: 'Database connection not established.' });
+  }
   const user = await User.findById(req.user._id);
   if (user) {
     res.json(user);
